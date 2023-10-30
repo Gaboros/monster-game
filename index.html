@@ -10,12 +10,12 @@
     <script src="assets/scripts/app.js" defer></script>
   </head>
   <body>
-    <video controls="" autoplay="" name="media">
-      <source
-        src="https://github.com/brittythed00m/monster-game/raw/main/sound.mp3"
-        type="audio/mp3"
-      />
-    </video>
+    <script>
+      var audio = new Audio(
+        "https://github.com/brittythed00m/monster-game/raw/main/sound.mp3"
+      );
+      audio.play();
+    </script>
 
     <section id="health-levels">
       <h2>MONSTER HEALTH</h2>
