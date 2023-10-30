@@ -14,14 +14,27 @@ const LOG_EVENT_GAME_OVER = "GAME_OVER";
 const enteredValue = prompt(`Maximum life for you and the monster.`, `100`);
 
 const playerAudio = new Audio(
-  "https://github.com/brittythed00m/monster-game/blob/main/sword.mp3?raw=true"
+  "/assets/sounds/sword.mp3"
 );
+playerAudio.load();
+
 const playerHardAudio = new Audio(
-  "https://github.com/brittythed00m/monster-game/blob/main/heavy.mp3?raw=true"
+    "/assets/sounds/heavy.mp3"
 );
+playerHardAudio.load();
+
 const healAudio = new Audio(
-  "https://github.com/brittythed00m/monster-game/blob/main/heal.mp3?raw=true"
+    "/assets/sounds/heal.mp3"
 );
+healAudio.load();
+
+const music = new Audio(
+    "/assets/sounds/sound.mp3"
+);
+music.volume = 0.5;
+music.autoplay = true;
+
+let isMusicLooping = false;
 
 let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
@@ -172,13 +185,23 @@ healBtn.addEventListener("click", healPlayerHandler);
 logBtn.addEventListener("click", printLogHandler);
 
 function playerAudioPlay() {
+  startMusic();
   playerAudio.play();
 }
 
 function monsterAudioPlay() {
+  startMusic();
   playerHardAudio.play();
 }
 
 function healAudioPlay() {
+  startMusic();
   healAudio.play();
+}
+
+function startMusic() {
+  if (!isMusicLooping) {
+    music.play();
+    isMusicLooping = true;
+  }
 }
