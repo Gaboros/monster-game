@@ -14,22 +14,22 @@ const LOG_EVENT_GAME_OVER = "GAME_OVER";
 const enteredValue = prompt(`Maximum life for you and the monster.`, `100`);
 
 const playerAudio = new Audio(
-  "/assets/sounds/sword.mp3"
+  "assets/sounds/sword.mp3"
 );
 playerAudio.load();
 
 const playerHardAudio = new Audio(
-    "/assets/sounds/heavy.mp3"
+    "assets/sounds/heavy.mp3"
 );
 playerHardAudio.load();
 
 const healAudio = new Audio(
-    "/assets/sounds/heal.mp3"
+    "assets/sounds/heal.mp3"
 );
 healAudio.load();
 
 const music = new Audio(
-    "/assets/sounds/sound.mp3"
+    "assets/sounds/sound.mp3"
 );
 music.volume = 0.5;
 music.autoplay = true;
