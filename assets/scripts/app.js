@@ -13,9 +13,15 @@ const LOG_EVENT_GAME_OVER = "GAME_OVER";
 
 const enteredValue = prompt(`Maximum life for you and the monster.`, `100`);
 
-const playerAudio = new Audio("sword.mp3");
-const playerHardAudio = new Audio("heavy.mp3");
-const healAudio = new Audio("heal.mp3");
+const playerAudio = new Audio(
+  "https://github.com/brittythed00m/monster-game/blob/main/sword.mp3?raw=true"
+);
+const playerHardAudio = new Audio(
+  "https://github.com/brittythed00m/monster-game/blob/main/heavy.mp3?raw=true"
+);
+const healAudio = new Audio(
+  "https://github.com/brittythed00m/monster-game/blob/main/heal.mp3?raw=true"
+);
 
 let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
