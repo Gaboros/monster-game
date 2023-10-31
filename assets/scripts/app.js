@@ -23,7 +23,7 @@ const healAudio = new Audio("assets/sounds/heal.mp3");
 healAudio.load();
 
 const music = new Audio("assets/sounds/sound.mp3");
-music.volume = 0.5;
+music.volume = 0.3;
 music.autoplay = true;
 
 let isMusicLooping = false;
@@ -172,6 +172,7 @@ function writeToLog(ev, val, monsterHealth, playerHealth) {
     endRound();
   }
   function attackHandler() {
+    playerAudio.play();
     attackMonster(MODE_ATTACK);
   }
 
@@ -222,7 +223,6 @@ function writeToLog(ev, val, monsterHealth, playerHealth) {
     startMusic();
     playerAudio.play();
   }
-
   function monsterAudioPlay() {
     startMusic();
     playerHardAudio.play();
