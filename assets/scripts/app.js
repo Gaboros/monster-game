@@ -30,6 +30,7 @@ let isMusicLooping = false;
 
 let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
+let lastLoggedEntry;
 
 if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
   chosenMaxLife = 100;
@@ -197,8 +198,19 @@ function writeToLog(ev, val, monsterHealth, playerHealth) {
     endRound();
   }
 
+  let i = 0;
   function printLogHandler() {
-    console.log(battleLog);
+    for (const logEntry of battleLog) {
+      if ((!lastLoggedEntry && lastLoggedEntry !== 0) || lastLoggedEntry < i) {
+        console.log(`#{i}`);
+        for (const key in logEntry) {
+          console.log(`${key} => ${logEntry[key]}`);
+        }
+        lastLoggedEntry = i;
+        break;
+      }
+      i++;
+    }
   }
 
   attackBtn.addEventListener("click", attackHandler);
